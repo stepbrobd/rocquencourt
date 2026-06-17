@@ -8,17 +8,17 @@
 
         forAllSystems = lib.genAttrs [
           "x86_64-linux"
-          "aarch64-linux"
-          "aarch64-darwin"
+          # "aarch64-linux"
+          # "aarch64-darwin"
         ];
 
         allowedPrefixes = [
-          "coqPackages_9_0"
-          "coqPackages_9_1"
+          # "coqPackages_9_0"
+          # "coqPackages_9_1"
           "coqPackages_9_2"
 
-          "rocqPackages_9_0"
-          "rocqPackages_9_1"
+          # "rocqPackages_9_0"
+          # "rocqPackages_9_1"
           "rocqPackages_9_2"
         ];
       in
