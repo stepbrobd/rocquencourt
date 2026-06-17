@@ -1,0 +1,34 @@
+{
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
+
+  outputs = { nixpkgs, ... }: {
+    legacyPackages =
+      let
+        inherit (nixpkgs) lib;
+
+        forAllSystems = lib.genAttrs [
+          "x86_64-linux"
+          "aarch64-linux"
+          "aarch64-darwin"
+        ];
+
+        allowedPrefixes = [
+          "coqPackages_9_0"
+          "coqPackages_9_1"
+          "coqPackages_9_2"
+
+          "rocqPackages_9_0"
+          "rocqPackages_9_1"
+          "rocqPackages_9_2"
+        ];
+      in
+      forAllSystems (
+        system: lib.genAttrs allowedPrefixes (prefix: nixpkgs.legacyPackages.${system}.${prefix})
+      );
+  };
+
+  nixConfig.extra-substituters = [ "https://cache.ysun.co" ];
+  nixConfig.extra-trusted-public-keys = [
+    "cache.ysun.co-1:WxPYwT5g3kt9XhUhHPpNLZKI9HIOsVVAuqSHpok8Qt4="
+  ];
+}
