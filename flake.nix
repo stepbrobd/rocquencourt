@@ -22,10 +22,15 @@
           "rocqPackages_9_1"
           "rocqPackages_9_2"
         ];
+
+        pkgsFor =
+          system:
+          import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
       in
-      forAllSystems (
-        system: lib.genAttrs allowedPrefixes (prefix: nixpkgs.legacyPackages.${system}.${prefix})
-      );
+      forAllSystems (system: lib.genAttrs allowedPrefixes (prefix: (pkgsFor system).${prefix}));
   };
 
   nixConfig.extra-substituters = [ "https://cache.ysun.co" ];
