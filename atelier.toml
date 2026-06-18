@@ -3,4 +3,4 @@ trusted-public-keys = ["cache.ysun.co-1:WxPYwT5g3kt9XhUhHPpNLZKI9HIOsVVAuqSHpok8
 
 systems = ["x86_64-linux", "aarch64-linux", "aarch64-darwin"]
 
-include = ["legacyPackages.*.*"]
+include = ["legacyPackages.*.**"]
