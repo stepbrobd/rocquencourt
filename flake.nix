@@ -1,5 +1,5 @@
 {
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/f348a2b7e31beb5c288e4d8af4b36917522af799";
 
   outputs = { nixpkgs, ... }: {
     legacyPackages =
