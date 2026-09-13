@@ -13,11 +13,6 @@
         ];
 
         allowedPrefixes = [
-          "coqPackages_8_20"
-          "coqPackages_9_0"
-          "coqPackages_9_1"
-          "coqPackages_9_2"
-
           "rocqPackages_9_0"
           "rocqPackages_9_1"
           "rocqPackages_9_2"
