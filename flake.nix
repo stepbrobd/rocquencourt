@@ -9,11 +9,9 @@
         forAllSystems = lib.genAttrs [
           "x86_64-linux"
           "aarch64-linux"
-          # "aarch64-darwin"
         ];
 
         allowedPrefixes = [
-          "rocqPackages_9_0"
           "rocqPackages_9_1"
           "rocqPackages_9_2"
         ];
